@@ -5,6 +5,7 @@ import Features from "./components/Features";
 import Story from "./components/Story";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import TestimonialSlider from "./components/TestimonialSlider";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <About />
       <Features />
       <Story />
+      <TestimonialSlider/>
       <Contact />
       <Footer />
     </main>

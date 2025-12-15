@@ -1,7 +1,6 @@
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/all'
-import { TiLocationArrow } from 'react-icons/ti'
 import { useEffect, useRef, useState } from 'react'
 
 import Button from './Button'
@@ -140,17 +139,26 @@ const Hero = () => {
           />
         </div>
 
-        <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 bg-gradient-to-r from-gray-400 to-white bg-clip-text text-transparent">
+        <h1
+          className="special-font hero-heading absolute bottom-5 right-5 z-40 text-white drop-shadow-lg"
+          style={{ textShadow: '2px 2px 4px rgba(107, 114, 128, 0.7)' }}
+        >
           Web<b>3</b>Marketing
         </h1>
 
         <div className="absolute left-0 top-0 z-40 size-full">
           <div className="mt-24 px-5 sm:px-10">
-            <h1 className="special-font hero-heading bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">
+            <h1
+              className="special-font hero-heading text-white drop-shadow-lg"
+              style={{ textShadow: '2px 2px 4px rgba(107, 114, 128, 0.7)' }}
+            >
               Orga<b>n</b>ic Growth
             </h1>
 
-            <p className="mb-5 max-w-64 font-robert-regular bg-gradient-to-r from-gray-300 to-gray-100 bg-clip-text text-transparent">
+            <p
+              className="mb-5 max-w-64 font-robert-regular text-white drop-shadow-lg"
+              style={{ textShadow: '2px 2px 4px rgba(107, 114, 128, 0.7)' }}
+            >
               We build organic marketing channels <br /> that drive real users
               and volume for top web3 brands
             </p>
@@ -164,7 +172,10 @@ const Hero = () => {
         </div>
       </div>
 
-      <h1 className="special-font hero-heading absolute bottom-5 right-5 bg-gradient-to-r from-gray-400 to-white bg-clip-text text-transparent">
+      <h1
+        className="special-font hero-heading absolute bottom-5 right-5 text-white drop-shadow-lg"
+        style={{ textShadow: '2px 2px 4px rgba(107, 114, 128, 0.7)' }}
+      >
         Web<b>3</b>Marketing
       </h1>
     </div>

@@ -1,66 +1,65 @@
-import clsx from "clsx";
-import gsap from "gsap";
-import { useWindowScroll } from "react-use";
-import { useEffect, useRef, useState } from "react";
-import { TiLocationArrow } from "react-icons/ti";
+import clsx from 'clsx'
+import gsap from 'gsap'
+import { useWindowScroll } from 'react-use'
+import { useEffect, useRef, useState } from 'react'
 
-import Button from "./Button";
+import Button from './Button'
 
-const navItems = [ "About", "Contact"];
+const navItems = ['About', 'Contact']
 
 const NavBar = () => {
   // State for toggling audio and visual indicator
-  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
-  const [isIndicatorActive, setIsIndicatorActive] = useState(false);
+  const [isAudioPlaying, setIsAudioPlaying] = useState(false)
+  const [isIndicatorActive, setIsIndicatorActive] = useState(false)
 
   // Refs for audio and navigation container
-  const audioElementRef = useRef(null);
-  const navContainerRef = useRef(null);
+  const audioElementRef = useRef(null)
+  const navContainerRef = useRef(null)
 
-  const { y: currentScrollY } = useWindowScroll();
-  const [isNavVisible, setIsNavVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const { y: currentScrollY } = useWindowScroll()
+  const [isNavVisible, setIsNavVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
 
   // Toggle audio and visual indicator
   const toggleAudioIndicator = () => {
-    setIsAudioPlaying((prev) => !prev);
-    setIsIndicatorActive((prev) => !prev);
-  };
+    setIsAudioPlaying((prev) => !prev)
+    setIsIndicatorActive((prev) => !prev)
+  }
 
   // Manage audio playback
   useEffect(() => {
     if (isAudioPlaying) {
-      audioElementRef.current.play();
+      audioElementRef.current.play()
     } else {
-      audioElementRef.current.pause();
+      audioElementRef.current.pause()
     }
-  }, [isAudioPlaying]);
+  }, [isAudioPlaying])
 
   useEffect(() => {
     if (currentScrollY === 0) {
       // Topmost position: show navbar without floating-nav
-      setIsNavVisible(true);
-      navContainerRef.current.classList.remove("floating-nav");
+      setIsNavVisible(true)
+      navContainerRef.current.classList.remove('floating-nav')
     } else if (currentScrollY > lastScrollY) {
       // Scrolling down: hide navbar and apply floating-nav
-      setIsNavVisible(false);
-      navContainerRef.current.classList.add("floating-nav");
+      setIsNavVisible(false)
+      navContainerRef.current.classList.add('floating-nav')
     } else if (currentScrollY < lastScrollY) {
       // Scrolling up: show navbar with floating-nav
-      setIsNavVisible(true);
-      navContainerRef.current.classList.add("floating-nav");
+      setIsNavVisible(true)
+      navContainerRef.current.classList.add('floating-nav')
     }
 
-    setLastScrollY(currentScrollY);
-  }, [currentScrollY, lastScrollY]);
+    setLastScrollY(currentScrollY)
+  }, [currentScrollY, lastScrollY])
 
   useEffect(() => {
     gsap.to(navContainerRef.current, {
       y: isNavVisible ? 0 : -100,
       opacity: isNavVisible ? 1 : 0,
       duration: 0.2,
-    });
-  }, [isNavVisible]);
+    })
+  }, [isNavVisible])
 
   return (
     <div
@@ -87,7 +86,8 @@ const NavBar = () => {
                 <a
                   key={index}
                   href={`#${item.toLowerCase()}`}
-                  className="nav-hover-btn"
+                  className="nav-hover-btn text-yellow-300 drop-shadow-lg"
+                  style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}
                 >
                   {item}
                 </a>
@@ -107,7 +107,7 @@ const NavBar = () => {
               {[1, 2, 3, 4].map((bar) => (
                 <div
                   key={bar}
-                  className={clsx("indicator-line", {
+                  className={clsx('indicator-line', {
                     active: isIndicatorActive,
                   })}
                   style={{
@@ -120,7 +120,7 @@ const NavBar = () => {
         </nav>
       </header>
     </div>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default NavBar

@@ -101,10 +101,16 @@ const Features = () => (
   <section className="bg-black pb-52">
     <div className="container mx-auto px-3 md:px-10">
       <div className="px-5 py-32">
-        <p className="font-circular-web text-lg text-yellow-300">
+        <p
+          className="font-circular-web text-lg text-white drop-shadow-lg"
+          style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}
+        >
           Our Services
         </p>
-        <p className="max-w-md font-circular-web text-lg text-gray-300 opacity-80">
+        <p
+          className="max-w-md font-circular-web text-lg text-white drop-shadow-lg"
+          style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}
+        >
           Comprehensive web3 marketing solutions designed to amplify your brand,
           attract quality users, and drive sustainable growth across all
           channels.

@@ -1,10 +1,10 @@
-import { FaDiscord, FaTwitter, FaYoutube, FaLinkedin } from 'react-icons/fa'
+import { FaTwitter, FaLinkedin } from 'react-icons/fa'
+import { FaTelegram } from 'react-icons/fa6'
 
 const socialLinks = [
-  { href: 'https://discord.com', icon: <FaDiscord /> },
-  { href: 'https://twitter.com', icon: <FaTwitter /> },
-  { href: 'https://youtube.com', icon: <FaYoutube /> },
-  { href: 'https://medium.com', icon: <FaLinkedin /> },
+  { href: 'https://t.me/BefikraGrowthX', icon: <FaTelegram /> },
+  { href: 'https://x.com/BefikraTech', icon: <FaTwitter /> },
+  { href: 'https://www.linkedin.com/company/befikracommunity', icon: <FaLinkedin /> },
 ]
 
 const Footer = () => {
